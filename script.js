@@ -1,93 +1,70 @@
+```javascript
 /* =====================================
-   AGROVISION 2.0
+   AGROVISION - SCRIPT.JS
    Desenvolvido por Gustavo
 ===================================== */
-
-/* -----------------------------
-   CONTADORES ANIMADOS
------------------------------- */
-
-function animarContador(id, valorFinal) {
-
-    let contador = 0;
-    const elemento = document.getElementById(id);
-
-    const intervalo = setInterval(() => {
-
-        contador += Math.ceil(valorFinal / 100);
-
-        if (contador >= valorFinal) {
-            contador = valorFinal;
-            clearInterval(intervalo);
-        }
-
-        elemento.textContent = contador.toLocaleString();
-
-    }, 20);
-
-}
-
-window.addEventListener("load", () => {
-
-    animarContador("agua", 50000);
-    animarContador("arvores", 1200);
-    animarContador("produtores", 350);
-
-});
-
-
-/* -----------------------------
-   CALCULADORA SUSTENTÁVEL
------------------------------- */
-
-function calcularEconomia() {
-
-    const hectares =
-        Number(document.getElementById("hectares").value);
-
-    const resultado =
-        document.getElementById("resultado");
-
-    if (hectares <= 0 || isNaN(hectares)) {
-
-        resultado.innerHTML =
-            "⚠️ Digite uma quantidade válida de hectares.";
-
-        return;
-    }
-
-    const economia = hectares * 500;
-
-    resultado.innerHTML =
-        `💧 Economia estimada: <strong>${economia.toLocaleString()}</strong> litros de água por dia.`;
-
-}
-
 
 /* -----------------------------
    MODO ESCURO
 ------------------------------ */
 
-const darkModeBtn =
-    document.getElementById("darkModeBtn");
+const darkModeBtn = document.getElementById("darkModeBtn");
 
 darkModeBtn.addEventListener("click", () => {
 
-    document.body.classList.toggle("dark");
+    document.body.classList.toggle("dark-mode");
 
-    if (document.body.classList.contains("dark")) {
-
-        darkModeBtn.textContent =
-            "☀️ Modo Claro";
-
-    } else {
-
-        darkModeBtn.textContent =
-            "🌙 Modo Escuro";
-
+    if(document.body.classList.contains("dark-mode")){
+        darkModeBtn.textContent = "☀️ Modo Claro";
+    }else{
+        darkModeBtn.textContent = "🌙 Modo Escuro";
     }
 
 });
+
+
+/* -----------------------------
+   CALCULADORA DE ÁGUA
+------------------------------ */
+
+function calcularEconomia(){
+
+    const hectares =
+        Number(document.getElementById("hectares").value);
+
+    const resultado =
+        document.getElementById("resultadoAgua");
+
+    if(hectares <= 0 || isNaN(hectares)){
+
+        resultado.innerHTML =
+            "⚠️ Digite um valor válido.";
+
+        return;
+    }
+
+    let economia = hectares * 500;
+
+    resultado.innerHTML =
+        `💧 Com práticas sustentáveis, você pode economizar aproximadamente <strong>${economia.toLocaleString()}</strong> litros de água por dia.`;
+
+}
+
+
+/* -----------------------------
+   CONTADOR DE ÁRVORES
+------------------------------ */
+
+let contadorArvores = 0;
+
+function preservarArvore(){
+
+    contadorArvores += 10;
+
+    document.getElementById("contador").textContent =
+        contadorArvores;
+
+}
 
 
 /* -----------------------------
@@ -96,61 +73,70 @@ darkModeBtn.addEventListener("click", () => {
 
 const frases = [
 
-    "🌱 Cada pequena ação sustentável gera grandes resultados.",
+    "🌱 Cada ação sustentável ajuda a construir um futuro melhor.",
 
-    "🚜 A tecnologia é uma aliada da agricultura moderna.",
+    "🚜 A tecnologia pode aumentar a produção e preservar a natureza.",
 
-    "💧 Economizar água hoje é garantir alimento amanhã.",
+    "💧 Economizar água hoje garante alimentos amanhã.",
 
-    "🌳 Preservar a natureza é investir no futuro.",
+    "☀️ Energia limpa é uma aliada da agricultura sustentável.",
 
-    "☀️ Produzir mais e preservar melhor é possível.",
-
-    "🤖 Inovação e sustentabilidade caminham juntas no campo."
+    "🌳 Preservar o meio ambiente é investir nas próximas gerações."
 
 ];
 
-function mostrarFrase() {
+const fraseBtn =
+    document.getElementById("fraseBtn");
 
-    const fraseAleatoria =
-        frases[Math.floor(Math.random() * frases.length)];
+fraseBtn.addEventListener("click", () => {
 
-    alert(fraseAleatoria);
+    const indice =
+        Math.floor(Math.random() * frases.length);
+
+    document.getElementById("fraseMotivacional")
+        .textContent = frases[indice];
+
+});
+
+
+/* -----------------------------
+   FORMULÁRIO
+------------------------------ */
+
+function enviarMensagem(){
+
+    const nome =
+        document.getElementById("nome").value;
+
+    const mensagem =
+        document.getElementById("mensagem").value;
+
+    const resposta =
+        document.getElementById("mensagemUsuario");
+
+    if(nome === "" || mensagem === ""){
+
+        resposta.innerHTML =
+            "⚠️ Preencha todos os campos.";
+
+        return;
+    }
+
+    resposta.innerHTML =
+        `✅ Obrigado, ${nome}! Sua ideia foi registrada com sucesso.`;
 
 }
 
 
 /* -----------------------------
-   FRASE AUTOMÁTICA
+   MENSAGEM AUTOMÁTICA
 ------------------------------ */
 
-setTimeout(() => {
+window.addEventListener("load", () => {
 
     console.log(
         "AgroVision carregado com sucesso!"
     );
 
-}, 1000);
-
-
-/* -----------------------------
-   EFEITO SUAVE NOS LINKS
------------------------------- */
-
-document.querySelectorAll('a[href^="#"]')
-.forEach(link => {
-
-    link.addEventListener("click", function(e) {
-
-        e.preventDefault();
-
-        const destino =
-            document.querySelector(this.getAttribute("href"));
-
-        destino.scrollIntoView({
-            behavior: "smooth"
-        });
-
-    });
-
 });
+```
