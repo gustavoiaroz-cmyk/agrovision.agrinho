@@ -270,3 +270,16 @@ footer{
 
 }
 ```
+textarea{
+    width:100%;
+    max-width:600px;
+
+    padding:15px;
+
+    border-radius:10px;
+    border:1px solid #ddd;
+
+    resize:none;
+
+    margin-top:15px;
+}
