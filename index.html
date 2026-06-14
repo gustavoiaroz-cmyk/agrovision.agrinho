@@ -1,156 +1,227 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroVision - Agro Forte, Futuro Sustentável</title>
 
-<title>AgroVision - Agro Forte, Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Fonte Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <div class="logo">
-            <img src="img/logo.png" alt="AgroVision">
-            <h1>AgroVision</h1>
+    <!-- Botão Modo Escuro -->
+    <button id="darkModeBtn" class="dark-mode-btn">
+        🌙 Modo Escuro
+    </button>
+
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <h1>🌾 AgroVision</h1>
+
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#calculadora">Calculadora</a></li>
+                <li><a href="#arvores">Árvores</a></li>
+                <li><a href="#tecnologia">Tecnologia</a></li>
+                <li><a href="#autor">Autor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Agro Forte, Futuro Sustentável</h2>
+
+            <p>
+                Produzir alimentos com responsabilidade,
+                preservando a natureza para as próximas gerações.
+            </p>
+
+            <a href="#sobre" class="btn">
+                Descubra Mais
+            </a>
         </div>
+    </section>
 
-        <ul>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#tecnologia">Tecnologia</a></li>
-            <li><a href="#calculadora">Calculadora</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section class="hero">
-
-    <div class="overlay"></div>
-
-    <div class="hero-content">
-        <h1>Agro Forte, Futuro Sustentável</h1>
+    <!-- Sobre -->
+    <section id="sobre" class="section">
+        <h2>🌱 Agricultura Sustentável</h2>
 
         <p>
-            Tecnologia, inovação e responsabilidade ambiental
-            trabalhando juntas para transformar o futuro da agricultura.
+            A agricultura sustentável busca aumentar a produção
+            de alimentos sem comprometer os recursos naturais.
+            Utilizando tecnologias modernas e práticas conscientes,
+            é possível produzir mais e preservar o meio ambiente.
         </p>
+    </section>
 
-        <a href="#sobre" class="btn">
-            Explorar Projeto
-        </a>
-    </div>
+    <!-- Soluções -->
+    <section id="solucoes" class="section cards">
 
-</section>
-
-<section class="estatisticas">
-
-    <div class="card">
-        <h2 id="agua">0</h2>
-        <p>Litros Economizados</p>
-    </div>
-
-    <div class="card">
-        <h2 id="arvores">0</h2>
-        <p>Árvores Preservadas</p>
-    </div>
-
-    <div class="card">
-        <h2 id="produtores">0</h2>
-        <p>Produtores Beneficiados</p>
-    </div>
-
-</section>
-
-<section id="sobre" class="section">
-
-    <h2>Sobre o Projeto</h2>
-
-    <p>
-        O AgroVision apresenta soluções sustentáveis para o campo,
-        demonstrando como a tecnologia pode aumentar a produção
-        agrícola sem comprometer o meio ambiente.
-    </p>
-
-</section>
-
-<section id="tecnologia" class="section">
-
-    <h2>Tecnologias do Futuro</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>🚁 Drones Agrícolas</h3>
-            <p>
-                Monitoramento inteligente das plantações.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🤖 Inteligência Artificial</h3>
-            <p>
-                Decisões mais eficientes para o produtor rural.
-            </p>
-        </div>
+        <h2>💡 Soluções para o Futuro</h2>
 
         <div class="card">
             <h3>💧 Irrigação Inteligente</h3>
             <p>
-                Economia de água e aumento da produtividade.
+                Reduz o desperdício de água utilizando sensores.
             </p>
         </div>
 
-    </div>
+        <div class="card">
+            <h3>☀️ Energia Solar</h3>
+            <p>
+                Fonte limpa e renovável para propriedades rurais.
+            </p>
+        </div>
 
-</section>
+        <div class="card">
+            <h3>♻️ Reaproveitamento da Água</h3>
+            <p>
+                Captação da água da chuva para novas utilizações.
+            </p>
+        </div>
 
-<section id="calculadora" class="section">
+        <div class="card">
+            <h3>🚜 Agricultura de Precisão</h3>
+            <p>
+                Uso de tecnologia para produzir mais com menos recursos.
+            </p>
+        </div>
 
-    <h2>Calculadora Sustentável</h2>
+    </section>
 
-    <input
-        type="number"
-        id="hectares"
-        placeholder="Digite a quantidade de hectares">
+    <!-- Calculadora -->
+    <section id="calculadora" class="section">
 
-    <button onclick="calcularEconomia()">
-        Calcular Economia
-    </button>
+        <h2>💧 Calculadora de Economia de Água</h2>
 
-    <p id="resultado"></p>
+        <label for="hectares">
+            Informe a quantidade de hectares:
+        </label>
 
-</section>
+        <input
+            type="number"
+            id="hectares"
+            placeholder="Digite a quantidade"
+        >
 
-<section id="contato" class="section">
+        <button onclick="calcularEconomia()">
+            Calcular
+        </button>
 
-    <h2>Meu Compromisso com o Futuro</h2>
+        <p id="resultadoAgua"></p>
 
-    <p>
-        Acredito que a tecnologia e a sustentabilidade
-        devem caminhar juntas para garantir alimento,
-        desenvolvimento e preservação ambiental para
-        as próximas gerações.
-    </p>
+    </section>
 
-</section>
+    <!-- Contador -->
+    <section id="arvores" class="section">
 
-<button id="darkModeBtn">
-    🌙 Modo Escuro
-</button>
+        <h2>🌳 Simulador de Preservação Ambiental</h2>
 
-<footer>
-    <p>
-        © 2026 AgroVision | Desenvolvido por Gustavo
-    </p>
-</footer>
+        <p>
+            Árvores preservadas:
+            <span id="contador">0</span>
+        </p>
 
-<script src="script.js"></script>
+        <button onclick="preservarArvore()">
+            Preservar Área
+        </button>
+
+    </section>
+
+    <!-- Tecnologia -->
+    <section id="tecnologia" class="section">
+
+        <h2>🚀 Tecnologia no Campo</h2>
+
+        <p>
+            Drones, inteligência artificial, sensores e sistemas
+            automatizados ajudam os produtores a reduzir desperdícios,
+            aumentar a produtividade e proteger o meio ambiente.
+        </p>
+
+        <button id="fraseBtn">
+            Gerar Mensagem Inspiradora
+        </button>
+
+        <p id="fraseMotivacional"></p>
+
+    </section>
+
+    <!-- Formulário -->
+    <section class="section">
+
+        <h2>📩 Compartilhe sua Ideia</h2>
+
+        <form>
+
+            <label for="nome">
+                Nome:
+            </label>
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Digite seu nome"
+            >
+
+            <label for="mensagem">
+                Sua ideia:
+            </label>
+
+            <textarea
+                id="mensagem"
+                rows="5"
+                placeholder="Escreva sua ideia sustentável..."
+            ></textarea>
+
+            <button type="button" onclick="enviarMensagem()">
+                Enviar
+            </button>
+
+        </form>
+
+        <p id="mensagemUsuario"></p>
+
+    </section>
+
+    <!-- Sobre o Autor -->
+    <section id="autor" class="section">
+
+        <h2>👨‍💻 Sobre o Desenvolvedor</h2>
+
+        <p>
+            Meu nome é Gustavo e desenvolvi este projeto com o objetivo
+            de mostrar como a tecnologia pode ajudar a construir um
+            futuro sustentável para a agricultura e para o planeta.
+        </p>
+
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+
+        <p>
+            Projeto desenvolvido para o Concurso Agrinho 2026.
+        </p>
+
+        <p>
+            Tema: Agro Forte, Futuro Sustentável:
+            equilíbrio entre produção e meio ambiente.
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
+```
