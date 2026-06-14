@@ -140,3 +140,30 @@ window.addEventListener("load", () => {
 
 });
 ```
+/* -----------------------------
+   FORMULÁRIO DE IDEIAS
+------------------------------ */
+
+function enviarIdeia() {
+
+    const nome =
+        document.getElementById("nome").value;
+
+    const ideia =
+        document.getElementById("ideia").value;
+
+    const mensagem =
+        document.getElementById("mensagemUsuario");
+
+    if(nome === "" || ideia === ""){
+
+        mensagem.innerHTML =
+            "⚠️ Preencha seu nome e sua ideia.";
+
+        return;
+    }
+
+    mensagem.innerHTML =
+        `✅ Obrigado, ${nome}! Sua ideia foi registrada com sucesso.`;
+
+}
